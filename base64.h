@@ -1,4 +1,5 @@
 #pragma once
+#include <stddef.h>
 
 size_t base64_encoded_length(size_t message_length);
 size_t base64_encoded_length(const char* message);
