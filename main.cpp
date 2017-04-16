@@ -6,12 +6,11 @@
 int main(int argc, char** argv)
 {
 	const char* input_message = "here is a large haystack";
-	const char* input_needle = "is";
 
-	char* encoded_message = (char*)alloca(base64_encoded_length(input_message));
+	char* encoded_message = (char*)malloc(base64_encoded_length(input_message));
 	base64_encode(encoded_message, input_message);
 
-	char* decoded_message = (char*)alloca(base64_decoded_length(encoded_message));
+	char* decoded_message = (char*)malloc(base64_decoded_length(encoded_message));
 	base64_decode(decoded_message, encoded_message);
 
 	printf("%s -> %s -> %s\n", input_message, encoded_message, decoded_message);
